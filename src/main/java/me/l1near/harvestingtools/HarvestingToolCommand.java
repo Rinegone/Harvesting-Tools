@@ -7,6 +7,7 @@ import cn.nukkit.command.CommandSender;
 import cn.nukkit.item.Item;
 import cn.nukkit.item.ItemID;
 import cn.nukkit.nbt.tag.CompoundTag;
+import joptsimple.internal.Strings;
 
 public class HarvestingToolCommand extends Command {
     public HarvestingToolCommand() {
@@ -18,22 +19,31 @@ public class HarvestingToolCommand extends Command {
     @Override
     public boolean execute(CommandSender commandSender, String s, String[] strings) {
         if (!this.testPermission(commandSender)) {
-            commandSender.sendMessage("§r§cYou do not have enough permission to execute this command!");
+            commandSender.sendMessage(Loader.getInstance().getConfig().getString("Messages.No-Permission message"));
             return false;
         }
         if (strings.length < 1) return false;
         Player target = Server.getInstance().getPlayer(strings[0]);
         Item item = Item
                 .get(ItemID.DIAMOND_HOE, 0, 1)
-                .setCustomName("§r§l§aHarvesting Hoe")
+                .setCustomName(Loader.getInstance().getConfig().getString("HarvestingTools.Hoe.Custom Name"))
                 .setNamedTag(new CompoundTag("harvesting-tool").putString("harvesting-tool", "hoe"));
         if (target == null) {
-            commandSender.sendMessage("§r§cPlayer cannot be found or is offline!");
+            commandSender.sendMessage(Loader.getInstance().getConfig().getString("Messages.Player not found")
+                    .replace("{TARGET_USERNAME}", strings[0])
+                    .replace("{COMMAND_SENDER_USERNAME}", commandSender.getName())
+            );
             return false;
         }
         target.getInventory().addItem(item);
-        target.sendMessage("§r§aYou have received a §r§l§aHarvesting Hoe");
-        commandSender.sendMessage("§r§a" + target.getName() + " was given a §r§l§aHarvesting Hoe");
+        target.sendMessage(Loader.getInstance().getConfig().getString("Messages.Item received")
+                .replace("{TARGET_USERNAME}", target.getName())
+                .replace("{COMMAND_SENDER_USERNAME}", commandSender.getName())
+        );
+        commandSender.sendMessage(Loader.getInstance().getConfig().getString("Messages.Item received")
+                .replace("{TARGET_USERNAME}", target.getName())
+                .replace("{COMMAND_SENDER_USERNAME}", commandSender.getName())
+        );
         return false;
     }
 }

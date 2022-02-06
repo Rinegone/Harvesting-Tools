@@ -1,0 +1,15 @@
+#{TARGET_USERNAME} => returns the player's name
+#{COMMAND_SENDER_USERNAME} => returns the player who executes the command
+
+Messages:
+  No-Permission: "§cYou do not have enough permission to execute this command!"
+  Player not found: "§cPlayer cannot be found or is offline!"
+  Item received: "§aYou have received a §r§l§aHarvesting Hoe"
+  Item given: "§r§a{USERNAME} was given a §r§l§aHarvesting Hoe"
+  Title:
+    Text: "§r§cWARNING"
+    Sub-Title: "§r§7Your inventory is full."
+
+Harvesting-Tools:
+  Hoe:
+    Custom Name: "§r§l§aHarvesting Hoe"
