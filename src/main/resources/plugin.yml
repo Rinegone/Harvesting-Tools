@@ -1,0 +1,6 @@
+name: HarvestingTool
+main: me.l1near.harvestingtools.Loader
+version: "${pom.version}"
+api: ["1.0.9"]
+author: L1near
+load: STARTUP
