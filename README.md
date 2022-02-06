@@ -1,5 +1,5 @@
 # Harvesting-Tools
-The best free Harvester Hoe plugin. Fully customizable which includes messages and being able to toggle the plugin on & off.
+The best free Harvester Hoe plugin.
 
 Harvester Hoes are mainly used in the factions gamemode to allow farming of sugar cane (economy) made easy. Essentially when a player is holding a harvester hoe and hits a block of sugar cane, the sugar cane will not drop and go directly into that players inventory.
 
