@@ -10,6 +10,11 @@ public class Loader extends PluginBase {
     private static Loader instance;
 
     @Override
+    public void onLoad() {
+        instance = this;
+    }
+
+    @Override
     public void onEnable() {
         System.out.println("Harvesting-Tools by L1near is now enabled!");
 

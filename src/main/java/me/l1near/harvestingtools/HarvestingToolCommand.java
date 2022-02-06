@@ -7,7 +7,6 @@ import cn.nukkit.command.CommandSender;
 import cn.nukkit.item.Item;
 import cn.nukkit.item.ItemID;
 import cn.nukkit.nbt.tag.CompoundTag;
-import joptsimple.internal.Strings;
 
 public class HarvestingToolCommand extends Command {
     public HarvestingToolCommand() {
