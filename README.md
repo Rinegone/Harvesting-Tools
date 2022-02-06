@@ -13,3 +13,5 @@ Please report any bugs either through dms or my discord (L1near#3607)
 
 **Requirements:**
  * NukkitX 1.0
+
+*If you have any questions feel free to send me a message on discord L1near#3607*
